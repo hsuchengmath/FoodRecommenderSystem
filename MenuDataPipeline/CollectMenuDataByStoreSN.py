@@ -33,24 +33,17 @@ def CollectMenuDataByStoreSN(StoreSN=int):
     StoreMenuList = list()
     menu_categories = OrganicMenuData['menus'][0]['menu_categories']
     for category_data in menu_categories:
-        MenuCategoryName = category_data['name']
-        MenuCategoryDescription = category_data['description']
         MenuCategoryProductsList = category_data['products']
         for food_data in MenuCategoryProductsList:
-            FoodName = food_data['name']
-            FoodImgUrl1 = food_data['file_path']
-            FoodImgUrl2 = food_data['logo_path']
-            FoodPrice = food_data['product_variations'][0]['price']
-            FoodContainerPrice = food_data['product_variations'][0]['container_price']
             FoodData = dict()
             FoodData['MenuData'] = MenuData
-            FoodData['MenuCategoryName'] = MenuCategoryName
-            FoodData['MenuCategoryDescription'] = MenuCategoryDescription
-            FoodData['FoodName'] = FoodName
-            FoodData['FoodImgUrl1'] = FoodImgUrl1
-            FoodData['FoodImgUrl2'] = FoodImgUrl2
-            FoodData['FoodPrice'] = FoodPrice
-            FoodData['FoodContainerPrice'] = FoodContainerPrice
+            FoodData['MenuCategoryName'] = category_data['name']
+            FoodData['MenuCategoryDescription'] = category_data['description']
+            FoodData['FoodName'] = food_data['name']
+            FoodData['FoodImgUrl1'] = food_data['file_path']
+            FoodData['FoodImgUrl2'] = food_data['logo_path']
+            FoodData['FoodPrice'] = food_data['product_variations'][0]['price']
+            FoodData['FoodContainerPrice'] = food_data['product_variations'][0]['container_price']
             StoreMenuList.append(FoodData)
     return StoreMenuList
 
