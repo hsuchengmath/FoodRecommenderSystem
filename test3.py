@@ -12,3 +12,4 @@ mycol.insert_one(mydict)
 # test
 for x in mycol.find():
    print(x)
+ 

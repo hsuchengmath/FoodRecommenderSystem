@@ -3,8 +3,12 @@
 import json
 import requests
 
-from MenuDataPipeline.config import CollectStoreSNByLatLon_url
-from MenuDataPipeline.config import CollectStoreSNByLatLon_headers
+try:
+    from MenuDataPipeline.config import CollectStoreSNByLatLon_url
+    from MenuDataPipeline.config import CollectStoreSNByLatLon_headers
+except:
+    from config import CollectStoreSNByLatLon_url
+    from config import CollectStoreSNByLatLon_headers   
 
 
 
@@ -40,19 +44,26 @@ def CollectStoreSNByLatLon(longitude=float, latitude=float, limit=None):
         StoreDataList.append(StoreData)
     return StoreDataList
 
-'''
-print(data['data']['items'][0].keys())
-print('storeID : ',data['data']['items'][0]['id'])
-print('address : ', data['data']['items'][0]['address'])
-print('budget : ', data['data']['items'][0]['budget'])
-print('name : ', data['data']['items'][0]['name'])
-print('rating : ', data['data']['items'][0]['rating'])
-print('review_number : ', data['data']['items'][0]['review_number'])
-print('cuisines : ', data['data']['items'][0]['cuisines'])
-cuisines :  [{'id': 176, 'name': '甜點', 'url_key': 'dessert', 'main': True}]
-'''
+def example():
+    '''
+    print(data['data']['items'][0].keys())
+    print('storeID : ',data['data']['items'][0]['id'])
+    print('address : ', data['data']['items'][0]['address'])
+    print('budget : ', data['data']['items'][0]['budget'])
+    print('name : ', data['data']['items'][0]['name'])
+    print('rating : ', data['data']['items'][0]['rating'])
+    print('review_number : ', data['data']['items'][0]['review_number'])
+    print('cuisines : ', data['data']['items'][0]['cuisines'])
+    cuisines :  [{'id': 176, 'name': '甜點', 'url_key': 'dessert', 'main': True}]
+    '''
+    a = 0
 
 
+
+
+
+longitude = 121.47232644568834
+latitude = 25.030015106563397
 if __name__ == '__main__':
-    StoreDataList = CollectStoreSNByLatLon(longitude=120.3025185, latitude=22.639473, limit=1)
+    StoreDataList = CollectStoreSNByLatLon(longitude=longitude, latitude=latitude ,limit=10)
     print(StoreDataList)

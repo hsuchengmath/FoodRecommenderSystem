@@ -7,6 +7,9 @@ from flask_cors import CORS
 from multiprocessing import Pool
 
 
+from NewAccount import InsertNewAccount
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -57,20 +60,17 @@ def AccountService():
     insertValues = request.get_json()
     # check input data 
     try:
-        account = insertValues['account']
-        password = insertValues['password']
+        account, password = str(insertValues['account']), str(insertValues['password'])
     except:
-        account = None
-        password = None
+        account, password = None, None
     
     # build account
     if account is not None and password is not None:
-        # build account
-        a = 0
+        # build new account
+        InsertNewAccount(account=account, password=password)
         MesssageCode = 200
     else:
         MesssageCode = -888
-    
     # output
     json_format = {'return' : MesssageCode}
     return jsonify(json_format)
