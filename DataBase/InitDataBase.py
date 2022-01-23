@@ -3,12 +3,11 @@
 
 import pymysql
 import pymongo
-from DataBaseService.config import mysql_host
-from DataBaseService.config import mysql_user
-from DataBaseService.config import mysql_password
-from DataBaseService.config import mysql_port
-
-from DataBaseService.config import mongo_host
+from DataBase.config import mysql_host
+from DataBase.config import mysql_user
+from DataBase.config import mysql_password
+from DataBase.config import mysql_port
+from DataBase.config import mongo_host
 
 
 

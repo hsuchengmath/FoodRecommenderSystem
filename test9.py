@@ -23,7 +23,6 @@ mycol = mydb[collection_name]
 FoodNameList = []
 for x in mycol.find():
     FoodNameList.append(x['FoodName'])
-print(set(FoodNameList))
-
+print(list(set(FoodNameList)))
 
 

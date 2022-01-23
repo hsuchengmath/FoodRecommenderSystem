@@ -4,8 +4,8 @@ import json
 import requests
 
 try:
-    from MenuDataPipeline.config import CollectStoreSNByLatLon_url
-    from MenuDataPipeline.config import CollectStoreSNByLatLon_headers
+    from DataPipeline.config import CollectStoreSNByLatLon_url
+    from DataPipeline.config import CollectStoreSNByLatLon_headers
 except:
     from config import CollectStoreSNByLatLon_url
     from config import CollectStoreSNByLatLon_headers   

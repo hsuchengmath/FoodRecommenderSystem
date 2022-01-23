@@ -5,7 +5,7 @@ import requests
 
 
 try:
-    from MenuDataPipeline.config import CollectMenuDataByStoreSN_url
+    from DataPipeline.config import CollectMenuDataByStoreSN_url
 except:
     from config import CollectMenuDataByStoreSN_url
 
@@ -84,4 +84,4 @@ def example():
 
 if __name__ == '__main__':
     StoreMenuList = CollectMenuDataByStoreSN(StoreSN=13851)
-    print(StoreMenuList[0])
+    print(StoreMenuList[5])

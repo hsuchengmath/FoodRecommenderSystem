@@ -2,10 +2,10 @@
 
 
 
-from MenuDataPipeline.CollectMenuDataByStoreSN import CollectMenuDataByStoreSN
-from MenuDataPipeline.CollectStoreSNByLatLon import CollectStoreSNByLatLon
-from DataBaseService.InitDataBase import InitMongoDataBase
-from DataBaseService.InsertData import InsertDataMongo
+from DataPipeline.CollectMenuDataByStoreSN import CollectMenuDataByStoreSN
+from DataPipeline.CollectStoreSNByLatLon import CollectStoreSNByLatLon
+from DataBase.InitDataBase import InitMongoDataBase
+from DataBase.InsertData import InsertDataMongo
 
 
 
@@ -14,7 +14,7 @@ collection = []
 longitude = 121.47232644568834
 latitude = 25.030015106563397
 
-StoreDataList = CollectStoreSNByLatLon(longitude=longitude, latitude=latitude ,limit=10)
+StoreDataList = CollectStoreSNByLatLon(longitude=longitude, latitude=latitude ,limit=30)
 
 for data in StoreDataList:
     StoreMenuList = CollectMenuDataByStoreSN(StoreSN=data['StoreSN'])

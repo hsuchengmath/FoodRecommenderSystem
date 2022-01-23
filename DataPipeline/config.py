@@ -10,3 +10,5 @@ CollectStoreSNByLatLon_headers = {'x-disco-client-id' : 'web'}
 CollectMenuDataByStoreSN_url = 'https://tw.fd-api.com/api/v5/vendors/{}'
 
 
+StageMongodbUrl = 'mongodb://140.116.52.210:27018/'
+ 

@@ -534,8 +534,10 @@ def CrawlPttData(Board_Name ='KoreaDrama' , start ='開始爬取的頁數' ,page
     
     
     for i in range(page_num):
+        print('NowPage : ', i+1)
         try:
             listt.append(ptt_crawl(Board_Name= Board_Name, start=start , page = i, column_eng=column_eng))
+            time.sleep(5)
         except:
             logging.error('page_num : {}'.format(str(i+1)))
     listtdf = pd.concat(listt)

@@ -23,7 +23,7 @@ import pickle
  
 
 # collect FoodNameList from mongoDB
-print(1)
+print(1) 
 StageMongodbUrl = 'mongodb://140.116.52.210:27018/'
 collection_name = 'MenuTEST'
 db_name = 'MenuTEST'
